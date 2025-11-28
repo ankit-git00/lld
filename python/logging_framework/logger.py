@@ -84,3 +84,4 @@ if __name__ == "__main__":
 
 #implement _callAppender, then move on to logMaanger and demo , it should take 2 sessions at max.
 
+# diagnose abstract format method error.
