@@ -35,6 +35,9 @@ class Logger:
             logger = logger.parent
         
         return LogLevel.DEBUG #default level
+    
+    def set_level(self,level: LogLevel):
+        self.level = level
 
     def log(self, messageLevel : LogLevel, message : str):
         if messageLevel.isGreaterOrEqual(self.get_effective_level()):
@@ -46,6 +49,9 @@ class Logger:
         if self.appenders:
             from custom_log_manager import LogManager
             LogManager.get_instance().get_processor().process(logMessage,self.appenders)
+        
+        if self.additivity and self.parent is not None:
+            self.parent._call_appenders(logMessage)
 
     
     def debug(self,message:str):
@@ -68,20 +74,16 @@ class Logger:
     
 def main():
     logger = Logger(name = 'main', parent=None)
+    secondaryLogger = Logger(name = 'secondary', parent=logger)
     logger.add_appender(ConsoleAppender())
-    logger.add_appender(FileAppender(file_path='/Users/ankit/repo/lld/python/logging_framework/logFile.txt'))
-    logger.debug("Hello")
-    logger.error("New")
+    # logger.add_appender(FileAppender(file_path='/Users/ankit/repo/lld/python/logging_framework/logFile.txt'))
+    # logger.debug("Hello")
+    # logger.error("New")
+
+    secondaryLogger.add_appender(ConsoleAppender())
+    secondaryLogger.info("Secondary logger info")
 
 if __name__ == "__main__":
     main()
 
 
-#check why _lock is not working, and impelement demo file.
-# it is acquiring the lock and never releasing it.
-
-
-
-#implement _callAppender, then move on to logMaanger and demo , it should take 2 sessions at max.
-
-# diagnose abstract format method error.

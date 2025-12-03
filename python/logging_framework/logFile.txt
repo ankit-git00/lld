@@ -1,0 +1,10 @@
+2025-12-03 13:25:08.360326 [MainThread] [LogLevel.DEBUG] - main : Hello
+2025-12-03 13:25:08.363737 [MainThread] [LogLevel.ERROR] - main : New
+2025-12-03 13:28:51.373506 [MainThread] [LogLevel.DEBUG] - main : Hello
+2025-12-03 13:28:51.379258 [MainThread] [LogLevel.ERROR] - main : New
+2025-12-03 13:29:36.694539 [MainThread] [LogLevel.DEBUG] - main : Hello
+2025-12-03 13:29:36.698259 [MainThread] [LogLevel.ERROR] - main : New
+2025-12-03 13:29:36.698275 [MainThread] [LogLevel.INFO] - secondary : Secondary logger info
+2025-12-03 13:32:06.763642 [MainThread] [LogLevel.DEBUG] - main : Hello
+2025-12-03 13:32:06.770718 [MainThread] [LogLevel.ERROR] - main : New
+2025-12-03 13:32:06.770733 [MainThread] [LogLevel.INFO] - secondary : Secondary logger info

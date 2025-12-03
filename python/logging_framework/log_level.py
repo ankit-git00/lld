@@ -15,7 +15,7 @@ def main():
     LogLevelB = LogLevel(2)
     print(LogLevelA.isGreaterOrEqual(LogLevelB))
 
-main()
+# main()
 
     
 

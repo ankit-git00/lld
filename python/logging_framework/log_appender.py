@@ -22,16 +22,16 @@ class ConsoleAppender(LogAppender):
         self.formatter = SimpleTextFormatter()
 
     def append(self, message: LogMessage):
-        print(self.formatter.format(message), end = '')
+        print(self.formatter.format(message), end = '\n')
     
-    def close():
+    def close(self):
         pass
 
     def set_formatter(self, formatter):
         self.formatter = formatter
 
 
-class FileAppender(LogFomatter):
+class FileAppender(LogAppender):
 
     def __init__(self, file_path : str):
         self.formatter = SimpleTextFormatter()

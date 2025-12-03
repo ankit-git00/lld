@@ -40,7 +40,7 @@ class LogManager:
         parent = self.get_logger(parent_name)
 
         self.loggers[name] = Logger(name, parent)
-        print(f"Created logger {name}")
+        # print(f"Created logger {name}")
         return self.loggers[name]
     
     def get_processor(self) -> AsyncLogProcessor:
