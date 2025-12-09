@@ -1,4 +1,6 @@
 {
+  "java.project.sourcePaths": ["java/src"]
+}{
   "files.associations": {
     "limits": "cpp",
     "valarray": "cpp",
